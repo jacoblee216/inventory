@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-public class inventory {
+public class App {
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
         ArrayList<Food> foodList = new ArrayList<Food>();
@@ -71,116 +71,9 @@ public class inventory {
         input.close();
     }
 };
-static class Food {
-    String foodType;
-    String foodName;
-    int day;
-    int month;
-    int year;
-    Food(String foodType, String foodName, int day, int month, int year) {
-        setFoodType(foodType);
-        setFoodName(foodName);
-        setDay(day);
-        setMonth(month);
-        setYear(year);
-    }
-    Food() {
-        setFoodType("None");
-        setFoodName("None");
-        setDay(0);
-        setMonth(0);
-        setYear(0);
-    }
-    void setFoodType(String foodType) {
-        this.foodType = foodType;
-    }
-    void setFoodName(String foodName) {
-        this.foodName = foodName;
-    }
-    void setDay(int day) {
-        this.day = day;
-    }
-    void setMonth(int month) {
-        this.month = month;
-    }
-    void setYear(int year) {
-        this.year = year;
-    }
-    String getFoodType() {
-        return foodType;
-    }
-    String getFoodName() {
-        return foodName;
-    }
-    int getDay() {
-        return day;
-    }
-    int getMonth() {
-        return month;
-    }
-    int getYear() {
-        return year;
-    }
-    public String toString() {
-        return "Food Type: " + foodType + "\nFood Name: " + foodName + "\nExpiration Date: " + day + "/" + month + "/" + year;
-    }
-}
-static class Kitchenware {
-    String name;
-    Kitchenware(String name) {
-        setName(name);
-    }
-    Kitchenware() {
-        setName("None");
-    }
-    void setName(String name) {
-        this.name = name;
-    }
-    String getName() {
-        return name;
-    }
-    public String toString() {
-        return "Kitchenware Name: " + name;
-    }
-}
-static class cleanSupplies {
-    String name;
-    boolean liquid;
-    boolean electric;
-    cleanSupplies(String name, boolean liquid, boolean electric) {
-        setName(name);
-        setLiquid(liquid);
-        setElectric(electric);
-    }
-    cleanSupplies() {
-        setName("None");
-        setLiquid(false);
-        setElectric(false);
-    }
-    void setName(String name) {
-        this.name = name;
-    }
-    void setLiquid(boolean liquid) {
-        this.liquid = liquid;
-    }
-    void setElectric(boolean electric) {
-        this.electric = electric;
-    }
 
-    String getName() {
-        return name;
-    }
-    boolean getLiquid() {
-        return liquid;
-    }
 
-    boolean getElectric() {
-        return electric;
-    }
-    public String toString() {
-        return "Cleaning Supplies Name: " + name + "\nLiquid: " + liquid + "\nElectric: " + electric;
-    }
-}
+
 static class liquidClean extends cleanSupplies {
     boolean toxic;
     liquidClean(String name, boolean liquid, boolean electric, boolean toxic) {
